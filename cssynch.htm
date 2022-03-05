@@ -43,72 +43,9 @@ table td, table th {
   <thead>
     <tr>
       <th colspan='4' style='color:red;'>
-        Issue: Safety violation
-      </th>
-      <th align='center' colspan='1'>
-        Shared Variables
-      </th>
-      <th align='center' colspan='1'>
-        Output
+        Issue: No issues
       </th>
     </tr>
-    <tr>
-      <th align='center' rowspan='1'>
-        Turn
-      </th>
-      <th align='center' rowspan='1'>
-        Thread
-      </th>
-      <th align='center' rowspan='1'>
-        Instructions Executed
-      </th>
-      <th align='center' rowspan='1'>
-        &nbsp;PC&nbsp;
-      </th>
-<td align='center' style='font-style: italic' colspan='1' rowspan='1'>lock</td>
-</tr><tr>
-    </tr>
-  </thead>
-  <tbody id='mestable'>
-<tr id='mes0'>
-  <td align='right'>
-    1&nbsp;
-  </td>
-  <td>
-    T0: __init__()  </td>
-  <td>
-    <canvas id='timeline0' width='300px' height='20px'>
-    </canvas>
-  </td>
-  <td align='center'>
-  </td>
-  <td align='center'>
-  </td>
-  <td>
-    <table id='log0' border='1'>
-    </table>
-  </td>
-</tr>
-<tr id='mes1'>
-  <td align='right'>
-    2&nbsp;
-  </td>
-  <td>
-    T1: thread()  </td>
-  <td>
-    <canvas id='timeline1' width='300px' height='10px'>
-    </canvas>
-  </td>
-  <td align='center'>
-  </td>
-  <td align='center'>
-  </td>
-  <td>
-    <table id='log1' border='1'>
-    </table>
-  </td>
-</tr>
-  </tbody>
 </table>
     </td>
   </tr>
@@ -443,8 +380,8 @@ table td, table th {
             <a name='P31'>31</a>&nbsp;
           </td>
           <td style='background-color: #E6E6E6;'>
-            <span title='start of method aquire' id='C31'>
-              Frame aquire lk
+            <span title='start of method acquire' id='C31'>
+              Frame acquire lk
             </span>
           </td>
         </tr>
@@ -823,8 +760,8 @@ table td, table th {
             <a name='P69'>69</a>&nbsp;
           </td>
           <td style='background-color: #E6E6E6;'>
-            <span title='set program counter to 97' id='C69'>
-              Jump 97
+            <span title='set program counter to 95' id='C69'>
+              Jump 95
             </span>
           </td>
         </tr>
@@ -863,8 +800,8 @@ table td, table th {
             <a name='P73'>73</a>&nbsp;
           </td>
           <td style='background-color: #E6E6E6;'>
-            <span title='pop a value and jump to 96 if the value is False' id='C73'>
-              JumpCond False 96
+            <span title='pop a value and jump to 94 if the value is False' id='C73'>
+              JumpCond False 94
             </span>
           </td>
         </tr>
@@ -873,8 +810,8 @@ table td, table th {
             <a name='P74'>74</a>&nbsp;
           </td>
           <td style='background-color: white;'>
-            <span title='push value of shared variable synch' id='C74'>
-              Load synch
+            <span title='push constant PC(31)' id='C74'>
+              Push PC(31)
             </span>
           </td>
         </tr>
@@ -883,8 +820,8 @@ table td, table th {
             <a name='P75'>75</a>&nbsp;
           </td>
           <td style='background-color: #E6E6E6;'>
-            <span title='push constant "acquire"' id='C75'>
-              Push "acquire"
+            <span title='push constant ?lock' id='C75'>
+              Push ?lock
             </span>
           </td>
         </tr>
@@ -903,8 +840,8 @@ table td, table th {
             <a name='P77'>77</a>&nbsp;
           </td>
           <td style='background-color: #E6E6E6;'>
-            <span title='push constant ?lock' id='C77'>
-              Push ?lock
+            <span title='discard the top value on the stack' id='C77'>
+              Pop
             </span>
           </td>
         </tr>
@@ -913,8 +850,8 @@ table td, table th {
             <a name='P78'>78</a>&nbsp;
           </td>
           <td style='background-color: white;'>
-            <span title='pop a pc or dictionary f and an index i and push f(i)' id='C78'>
-              Apply
+            <span title='increment atomic counter of context; thread runs uninterrupted if larger than 0' id='C78'>
+              AtomicInc(eager)
             </span>
           </td>
         </tr>
@@ -923,8 +860,8 @@ table td, table th {
             <a name='P79'>79</a>&nbsp;
           </td>
           <td style='background-color: #E6E6E6;'>
-            <span title='discard the top value on the stack' id='C79'>
-              Pop
+            <span title='increment readonly counter of context; thread cannot mutate shared variables if > 0' id='C79'>
+              ReadonlyInc
             </span>
           </td>
         </tr>
@@ -934,7 +871,7 @@ table td, table th {
           </td>
           <td style='background-color: white;'>
             <span title='increment atomic counter of context; thread runs uninterrupted if larger than 0' id='C80'>
-              AtomicInc(eager)
+              AtomicInc(lazy)
             </span>
           </td>
         </tr>
@@ -943,8 +880,8 @@ table td, table th {
             <a name='P81'>81</a>&nbsp;
           </td>
           <td style='background-color: #E6E6E6;'>
-            <span title='increment readonly counter of context; thread cannot mutate shared variables if > 0' id='C81'>
-              ReadonlyInc
+            <span title='push constant PC(78)' id='C81'>
+              Push PC(78)
             </span>
           </td>
         </tr>
@@ -953,8 +890,8 @@ table td, table th {
             <a name='P82'>82</a>&nbsp;
           </td>
           <td style='background-color: white;'>
-            <span title='increment atomic counter of context; thread runs uninterrupted if larger than 0' id='C82'>
-              AtomicInc(lazy)
+            <span title='pop 1 value and push the result of applying countLabel' id='C82'>
+              1-ary countLabel
             </span>
           </td>
         </tr>
@@ -963,8 +900,8 @@ table td, table th {
             <a name='P83'>83</a>&nbsp;
           </td>
           <td style='background-color: #E6E6E6;'>
-            <span title='push constant PC(80)' id='C83'>
-              Push PC(80)
+            <span title='push constant 1' id='C83'>
+              Push 1
             </span>
           </td>
         </tr>
@@ -973,8 +910,8 @@ table td, table th {
             <a name='P84'>84</a>&nbsp;
           </td>
           <td style='background-color: white;'>
-            <span title='pop 1 value and push the result of applying countLabel' id='C84'>
-              1-ary countLabel
+            <span title='pop 2 values and push the result of applying ==' id='C84'>
+              2-ary ==
             </span>
           </td>
         </tr>
@@ -983,8 +920,8 @@ table td, table th {
             <a name='P85'>85</a>&nbsp;
           </td>
           <td style='background-color: #E6E6E6;'>
-            <span title='push constant 1' id='C85'>
-              Push 1
+            <span title='pop a condition and raise exception if condition is false' id='C85'>
+              Assert
             </span>
           </td>
         </tr>
@@ -993,8 +930,8 @@ table td, table th {
             <a name='P86'>86</a>&nbsp;
           </td>
           <td style='background-color: white;'>
-            <span title='pop 2 values and push the result of applying ==' id='C86'>
-              2-ary ==
+            <span title='decrement atomic counter of context' id='C86'>
+              AtomicDec
             </span>
           </td>
         </tr>
@@ -1003,8 +940,8 @@ table td, table th {
             <a name='P87'>87</a>&nbsp;
           </td>
           <td style='background-color: #E6E6E6;'>
-            <span title='pop a condition and raise exception if condition is false' id='C87'>
-              Assert
+            <span title='decrement readonly counter of context' id='C87'>
+              ReadonlyDec
             </span>
           </td>
         </tr>
@@ -1023,8 +960,8 @@ table td, table th {
             <a name='P89'>89</a>&nbsp;
           </td>
           <td style='background-color: #E6E6E6;'>
-            <span title='decrement readonly counter of context' id='C89'>
-              ReadonlyDec
+            <span title='push constant PC(49)' id='C89'>
+              Push PC(49)
             </span>
           </td>
         </tr>
@@ -1033,8 +970,8 @@ table td, table th {
             <a name='P90'>90</a>&nbsp;
           </td>
           <td style='background-color: white;'>
-            <span title='decrement atomic counter of context' id='C90'>
-              AtomicDec
+            <span title='push constant ?lock' id='C90'>
+              Push ?lock
             </span>
           </td>
         </tr>
@@ -1043,8 +980,8 @@ table td, table th {
             <a name='P91'>91</a>&nbsp;
           </td>
           <td style='background-color: #E6E6E6;'>
-            <span title='push constant PC(49)' id='C91'>
-              Push PC(49)
+            <span title='pop a pc or dictionary f and an index i and push f(i)' id='C91'>
+              Apply
             </span>
           </td>
         </tr>
@@ -1053,8 +990,8 @@ table td, table th {
             <a name='P92'>92</a>&nbsp;
           </td>
           <td style='background-color: white;'>
-            <span title='push constant ?lock' id='C92'>
-              Push ?lock
+            <span title='discard the top value on the stack' id='C92'>
+              Pop
             </span>
           </td>
         </tr>
@@ -1063,8 +1000,8 @@ table td, table th {
             <a name='P93'>93</a>&nbsp;
           </td>
           <td style='background-color: #E6E6E6;'>
-            <span title='pop a pc or dictionary f and an index i and push f(i)' id='C93'>
-              Apply
+            <span title='set program counter to 71' id='C93'>
+              Jump 71
             </span>
           </td>
         </tr>
@@ -1073,8 +1010,8 @@ table td, table th {
             <a name='P94'>94</a>&nbsp;
           </td>
           <td style='background-color: white;'>
-            <span title='discard the top value on the stack' id='C94'>
-              Pop
+            <span title='restore caller method state and push result' id='C94'>
+              Return
             </span>
           </td>
         </tr>
@@ -1083,8 +1020,8 @@ table td, table th {
             <a name='P95'>95</a>&nbsp;
           </td>
           <td style='background-color: #E6E6E6;'>
-            <span title='set program counter to 71' id='C95'>
-              Jump 71
+            <span title='push constant { 1, 2 }' id='C95'>
+              Push { 1, 2 }
             </span>
           </td>
         </tr>
@@ -1093,8 +1030,8 @@ table td, table th {
             <a name='P96'>96</a>&nbsp;
           </td>
           <td style='background-color: white;'>
-            <span title='restore caller method state and push result' id='C96'>
-              Return
+            <span title='pop a value and store in $s86' id='C96'>
+              StoreVar $s86
             </span>
           </td>
         </tr>
@@ -1103,8 +1040,8 @@ table td, table th {
             <a name='P97'>97</a>&nbsp;
           </td>
           <td style='background-color: #E6E6E6;'>
-            <span title='push constant { 1, 2 }' id='C97'>
-              Push { 1, 2 }
+            <span title='push the value of $s86' id='C97'>
+              LoadVar $s86
             </span>
           </td>
         </tr>
@@ -1113,8 +1050,8 @@ table td, table th {
             <a name='P98'>98</a>&nbsp;
           </td>
           <td style='background-color: white;'>
-            <span title='pop a value and store in $s88' id='C98'>
-              StoreVar $s88
+            <span title='pop 1 value and push the result of applying IsEmpty' id='C98'>
+              1-ary IsEmpty
             </span>
           </td>
         </tr>
@@ -1123,8 +1060,8 @@ table td, table th {
             <a name='P99'>99</a>&nbsp;
           </td>
           <td style='background-color: #E6E6E6;'>
-            <span title='push the value of $s88' id='C99'>
-              LoadVar $s88
+            <span title='pop a value and jump to 107 if the value is True' id='C99'>
+              JumpCond True 107
             </span>
           </td>
         </tr>
@@ -1133,8 +1070,8 @@ table td, table th {
             <a name='P100'>100</a>&nbsp;
           </td>
           <td style='background-color: white;'>
-            <span title='pop 1 value and push the result of applying IsEmpty' id='C100'>
-              1-ary IsEmpty
+            <span title='remove smallest element from $s86 and assign to i' id='C100'>
+              Cut($s86, i)
             </span>
           </td>
         </tr>
@@ -1143,8 +1080,8 @@ table td, table th {
             <a name='P101'>101</a>&nbsp;
           </td>
           <td style='background-color: #E6E6E6;'>
-            <span title='pop a value and jump to 109 if the value is True' id='C101'>
-              JumpCond True 109
+            <span title='delete method variable i' id='C101'>
+              DelVar i
             </span>
           </td>
         </tr>
@@ -1153,8 +1090,8 @@ table td, table th {
             <a name='P102'>102</a>&nbsp;
           </td>
           <td style='background-color: white;'>
-            <span title='remove smallest element from $s88 and assign to i' id='C102'>
-              Cut($s88, i)
+            <span title='push constant PC(70)' id='C102'>
+              Push PC(70)
             </span>
           </td>
         </tr>
@@ -1163,8 +1100,8 @@ table td, table th {
             <a name='P103'>103</a>&nbsp;
           </td>
           <td style='background-color: #E6E6E6;'>
-            <span title='delete method variable i' id='C103'>
-              DelVar i
+            <span title='push constant ()' id='C103'>
+              Push ()
             </span>
           </td>
         </tr>
@@ -1173,8 +1110,8 @@ table td, table th {
             <a name='P104'>104</a>&nbsp;
           </td>
           <td style='background-color: white;'>
-            <span title='push constant PC(70)' id='C104'>
-              Push PC(70)
+            <span title='push constant ()' id='C104'>
+              Push ()
             </span>
           </td>
         </tr>
@@ -1183,8 +1120,8 @@ table td, table th {
             <a name='P105'>105</a>&nbsp;
           </td>
           <td style='background-color: #E6E6E6;'>
-            <span title='push constant ()' id='C105'>
-              Push ()
+            <span title='pop thread-local state, argument, and pc and spawn a new thread' id='C105'>
+              Spawn
             </span>
           </td>
         </tr>
@@ -1193,8 +1130,8 @@ table td, table th {
             <a name='P106'>106</a>&nbsp;
           </td>
           <td style='background-color: white;'>
-            <span title='push constant ()' id='C106'>
-              Push ()
+            <span title='set program counter to 97' id='C106'>
+              Jump 97
             </span>
           </td>
         </tr>
@@ -1203,8 +1140,8 @@ table td, table th {
             <a name='P107'>107</a>&nbsp;
           </td>
           <td style='background-color: #E6E6E6;'>
-            <span title='pop thread-local state, argument, and pc and spawn a new thread' id='C107'>
-              Spawn
+            <span title='delete method variable $s86' id='C107'>
+              DelVar $s86
             </span>
           </td>
         </tr>
@@ -1213,8 +1150,8 @@ table td, table th {
             <a name='P108'>108</a>&nbsp;
           </td>
           <td style='background-color: white;'>
-            <span title='set program counter to 99' id='C108'>
-              Jump 99
+            <span title='restore caller method state and push result' id='C108'>
+              Return
             </span>
           </td>
         </tr>
@@ -1223,27 +1160,7 @@ table td, table th {
             <a name='P109'>109</a>&nbsp;
           </td>
           <td style='background-color: #E6E6E6;'>
-            <span title='delete method variable $s88' id='C109'>
-              DelVar $s88
-            </span>
-          </td>
-        </tr>
-        <tr id='P110'>
-          <td align='right'>
-            <a name='P110'>110</a>&nbsp;
-          </td>
-          <td style='background-color: white;'>
-            <span title='restore caller method state and push result' id='C110'>
-              Return
-            </span>
-          </td>
-        </tr>
-        <tr id='P111'>
-          <td align='right'>
-            <a name='P111'>111</a>&nbsp;
-          </td>
-          <td style='background-color: #E6E6E6;'>
-            <span title='delete method variable result' id='C111'>
+            <span title='delete method variable result' id='C109'>
               DelVar result
             </span>
           </td>
@@ -1254,664 +1171,93 @@ table td, table th {
 </div>
     </td>
     <td valign='top'>
-<table border='1'
-  <thead>
-    <tr>
-      <th colspan='4'>Threads</th>
-    </tr>
-    <tr>
-      <th>
-        ID
-      </th>
-      <th>
-        Status
-      </th>
-      <th>
-        Stack Trace
-      </th>
-      <th>
-        Stack Top
-      </th>
-    </tr>
-  </thead>
-  <tbody id='threadtable'>
-    <tr id='thread0'>
-      <td align='center'>
-        T0
-      </td>
-      <td align='center'>
-        init
-      </td>
-      <td>
-        <table id='threadinfo0' border='1'>
-        </table>
-      </td>
-      <td align='left'>
-      </td>
-    </tr>
-    <tr id='thread1'>
-      <td align='center'>
-        T1
-      </td>
-      <td align='center'>
-        init
-      </td>
-      <td>
-        <table id='threadinfo1' border='1'>
-        </table>
-      </td>
-      <td align='left'>
-      </td>
-    </tr>
-    <tr id='thread2'>
-      <td align='center'>
-        T2
-      </td>
-      <td align='center'>
-        init
-      </td>
-      <td>
-        <table id='threadinfo2' border='1'>
-        </table>
-      </td>
-      <td align='left'>
-      </td>
-    </tr>
-  </tbody>
-</table>
     </td>
   </tr>
 </table>
 <script>
-var nthreads = 3;
-var nmegasteps = 2;
+var nthreads = 0;
+var nmegasteps = 0;
 var vardir = [
-  ['lock']
+  []
 ];
 var state =
 {
-  "issue": "Safety violation",
-  "macrosteps": [
+  "issue": "No issues",
+  "symbols": {
+
+  },
+  "nodes": [
     {
-      "id": "1",
-      "tid": "0",
-      "xhash": "257f433b1f7",
-      "name": "__init__()",
-      "microsteps": [
-        {
-          "shared": { },
-          "npc": "1",
-          "fp": "4",
-          "trace": [
-            {
-              "pc": "1",
-              "xpc": "0",
-              "method": "__init__()",
-              "calltype": "process",
-              "vars": { "result": { "type": "address", "value": [] } }
-            }
-          ],
-          "this": { "type": "dict", "value": [] },
-          "local": { "result": { "type": "address", "value": [] } },
-          "atomic": "1",
-          "push": [ { "type": "int", "value": "1" }, { "type": "dict", "value": [] }, { "type": "dict", "value": [] }, { "type": "int", "value": "0" } ],
-          "pc": "0"
-        },
-        {
-          "npc": "2",
-          "push": [ { "type": "dict", "value": [] } ],
-          "pc": "1"
-        },
-        {
-          "shared": { "synch": { "type": "dict", "value": [] } },
-          "npc": "3",
-          "pop": "1",
-          "push": [ ],
-          "pc": "2"
-        },
-        {
-          "npc": "65",
-          "push": [ ],
-          "pc": "3"
-        },
-        {
-          "npc": "66",
-          "push": [ { "type": "pc", "value": "25" } ],
-          "pc": "65"
-        },
-        {
-          "npc": "67",
-          "push": [ { "type": "dict", "value": [] } ],
-          "pc": "66"
-        },
-        {
-          "npc": "25",
-          "pop": "2",
-          "push": [ { "type": "pc", "value": "68" }, { "type": "int", "value": "2" }, { "type": "dict", "value": [] } ],
-          "pc": "67"
-        },
-        {
-          "npc": "26",
-          "fp": "9",
-          "trace": [
-            {
-              "pc": "68",
-              "xpc": "0",
-              "method": "__init__()",
-              "calltype": "process",
-              "vars": { "result": { "type": "address", "value": [] } }
-            },
-            {
-              "pc": "26",
-              "xpc": "25",
-              "method": "Lock()",
-              "calltype": "normal",
-              "vars": { "result": { "type": "address", "value": [] } }
-            }
-          ],
-          "push": [ { "type": "dict", "value": [{ "key": { "type": "atom", "value": "result" }, "value": { "type": "address", "value": [] } } ] }, { "type": "int", "value": "4" } ],
-          "pc": "25"
-        },
-        {
-          "npc": "27",
-          "local": { },
-          "push": [ ],
-          "pc": "26"
-        },
-        {
-          "npc": "28",
-          "push": [ { "type": "bool", "value": "False" } ],
-          "pc": "27"
-        },
-        {
-          "npc": "29",
-          "local": { "result": { "type": "bool", "value": "False" } },
-          "pop": "1",
-          "push": [ ],
-          "pc": "28"
-        },
-        {
-          "npc": "68",
-          "fp": "4",
-          "trace": [
-            {
-              "pc": "68",
-              "xpc": "0",
-              "method": "__init__()",
-              "calltype": "process",
-              "vars": { "result": { "type": "address", "value": [] } }
-            }
-          ],
-          "local": { "result": { "type": "address", "value": [] } },
-          "pop": "5",
-          "push": [ { "type": "bool", "value": "False" } ],
-          "pc": "29"
-        },
-        {
-          "shared": { "lock": { "type": "bool", "value": "False" }, "synch": { "type": "dict", "value": [] } },
-          "npc": "69",
-          "pop": "1",
-          "push": [ ],
-          "pc": "68"
-        },
-        {
-          "npc": "97",
-          "push": [ ],
-          "pc": "69"
-        },
-        {
-          "npc": "98",
-          "push": [ { "type": "set", "value": [{ "type": "int", "value": "1" }, { "type": "int", "value": "2" } ] } ],
-          "pc": "97"
-        },
-        {
-          "npc": "99",
-          "local": { "$s88": { "type": "set", "value": [{ "type": "int", "value": "1" }, { "type": "int", "value": "2" } ] }, "result": { "type": "address", "value": [] } },
-          "pop": "1",
-          "push": [ ],
-          "pc": "98"
-        },
-        {
-          "npc": "100",
-          "push": [ { "type": "set", "value": [{ "type": "int", "value": "1" }, { "type": "int", "value": "2" } ] } ],
-          "pc": "99"
-        },
-        {
-          "npc": "101",
-          "pop": "1",
-          "push": [ { "type": "bool", "value": "False" } ],
-          "pc": "100"
-        },
-        {
-          "npc": "102",
-          "pop": "1",
-          "push": [ ],
-          "pc": "101"
-        },
-        {
-          "npc": "103",
-          "local": { "$s88": { "type": "set", "value": [{ "type": "int", "value": "2" } ] }, "i": { "type": "int", "value": "1" }, "result": { "type": "address", "value": [] } },
-          "push": [ ],
-          "pc": "102"
-        },
-        {
-          "npc": "104",
-          "local": { "$s88": { "type": "set", "value": [{ "type": "int", "value": "2" } ] }, "result": { "type": "address", "value": [] } },
-          "push": [ ],
-          "pc": "103"
-        },
-        {
-          "npc": "105",
-          "push": [ { "type": "pc", "value": "70" } ],
-          "pc": "104"
-        },
-        {
-          "npc": "106",
-          "push": [ { "type": "dict", "value": [] } ],
-          "pc": "105"
-        },
-        {
-          "npc": "107",
-          "push": [ { "type": "dict", "value": [] } ],
-          "pc": "106"
-        },
-        {
-          "npc": "108",
-          "pop": "3",
-          "push": [ ],
-          "pc": "107"
-        },
-        {
-          "npc": "99",
-          "push": [ ],
-          "pc": "108"
-        },
-        {
-          "npc": "100",
-          "push": [ { "type": "set", "value": [{ "type": "int", "value": "2" } ] } ],
-          "pc": "99"
-        },
-        {
-          "npc": "101",
-          "pop": "1",
-          "push": [ { "type": "bool", "value": "False" } ],
-          "pc": "100"
-        },
-        {
-          "npc": "102",
-          "pop": "1",
-          "push": [ ],
-          "pc": "101"
-        },
-        {
-          "npc": "103",
-          "local": { "$s88": { "type": "set", "value": [] }, "i": { "type": "int", "value": "2" }, "result": { "type": "address", "value": [] } },
-          "push": [ ],
-          "pc": "102"
-        },
-        {
-          "npc": "104",
-          "local": { "$s88": { "type": "set", "value": [] }, "result": { "type": "address", "value": [] } },
-          "push": [ ],
-          "pc": "103"
-        },
-        {
-          "npc": "105",
-          "push": [ { "type": "pc", "value": "70" } ],
-          "pc": "104"
-        },
-        {
-          "npc": "106",
-          "push": [ { "type": "dict", "value": [] } ],
-          "pc": "105"
-        },
-        {
-          "npc": "107",
-          "push": [ { "type": "dict", "value": [] } ],
-          "pc": "106"
-        },
-        {
-          "npc": "108",
-          "pop": "3",
-          "push": [ ],
-          "pc": "107"
-        },
-        {
-          "npc": "99",
-          "push": [ ],
-          "pc": "108"
-        },
-        {
-          "npc": "100",
-          "push": [ { "type": "set", "value": [] } ],
-          "pc": "99"
-        },
-        {
-          "npc": "101",
-          "pop": "1",
-          "push": [ { "type": "bool", "value": "True" } ],
-          "pc": "100"
-        },
-        {
-          "npc": "109",
-          "pop": "1",
-          "push": [ ],
-          "pc": "101"
-        },
-        {
-          "npc": "110",
-          "local": { "result": { "type": "address", "value": [] } },
-          "push": [ ],
-          "pc": "109"
-        },
-        {
-          "npc": "110",
-          "fp": "0",
-          "trace": [
-
-          ],
-          "local": { },
-          "mode": "terminated",
-          "pop": "4",
-          "push": [ ],
-          "pc": "110"
-        }
+      "idx": 0,
+      "component": 0,
+      "transitions": [
+        [[],[2]]
       ],
-      "invfails": [
-      ],
-      "contexts": [
-        {
-          "tid": "0",
-          "yhash": "257f433b917",
-          "name": "__init__()",
-          "entry": "0",
-          "pc": "110",
-          "fp": "0",
-          "trace": [
-
-          ],
-          "atomic": "1",
-          "mode": "terminated",
-          "this": { "type": "dict", "value": [] }
-        },
-        {
-          "tid": "1",
-          "yhash": "257f433b467",
-          "name": "thread()",
-          "entry": "70",
-          "pc": "70",
-          "fp": "0",
-          "trace": [
-
-          ],
-          "mode": "runnable",
-          "this": { "type": "dict", "value": [] }
-        },
-        {
-          "tid": "2",
-          "yhash": "257f433b467",
-          "name": "thread()",
-          "entry": "70",
-          "pc": "70",
-          "fp": "0",
-          "trace": [
-
-          ],
-          "mode": "runnable",
-          "this": { "type": "dict", "value": [] }
-        }
-      ]
+      "type": "initial"
     },
     {
-      "id": "2",
-      "tid": "1",
-      "xhash": "257f433b467",
-      "name": "thread()",
-      "microsteps": [
-        {
-          "npc": "71",
-          "fp": "4",
-          "trace": [
-            {
-              "pc": "71",
-              "xpc": "70",
-              "method": "thread()",
-              "calltype": "process",
-              "vars": { "result": { "type": "address", "value": [] } }
-            }
-          ],
-          "this": { "type": "dict", "value": [] },
-          "local": { "result": { "type": "address", "value": [] } },
-          "push": [ { "type": "int", "value": "1" }, { "type": "dict", "value": [] }, { "type": "dict", "value": [] }, { "type": "int", "value": "0" } ],
-          "pc": "70"
-        },
-        {
-          "npc": "72",
-          "push": [ { "type": "set", "value": [{ "type": "bool", "value": "False" }, { "type": "bool", "value": "True" } ] } ],
-          "pc": "71"
-        }
+      "idx": 2,
+      "component": 2,
+      "transitions": [
+        [[],[16,17,14,15,2,8,7]]
       ],
-      "invfails": [
-      ],
-      "contexts": [
-        {
-          "tid": "0",
-          "yhash": "257f433b917",
-          "name": "__init__()",
-          "entry": "0",
-          "pc": "110",
-          "fp": "0",
-          "trace": [
-
-          ],
-          "atomic": "1",
-          "mode": "terminated",
-          "this": { "type": "dict", "value": [] }
-        },
-        {
-          "tid": "1",
-          "yhash": "257f433b797",
-          "name": "thread()",
-          "entry": "70",
-          "pc": "72",
-          "fp": "4",
-          "trace": [
-            {
-              "pc": "72",
-              "xpc": "70",
-              "method": "thread()",
-              "calltype": "process",
-              "vars": { "result": { "type": "address", "value": [] } }
-            }
-          ],
-          "mode": "choosing",
-          "this": { "type": "dict", "value": [] }
-        },
-        {
-          "tid": "2",
-          "yhash": "257f433b467",
-          "name": "thread()",
-          "entry": "70",
-          "pc": "70",
-          "fp": "0",
-          "trace": [
-
-          ],
-          "mode": "runnable",
-          "this": { "type": "dict", "value": [] }
-        }
-      ]
+      "type": "normal"
     },
     {
-      "id": "3",
-      "tid": "1",
-      "xhash": "257f433b797",
-      "name": "thread()",
-      "microsteps": [
-        {
-          "choose": { "type": "bool", "value": "True" },
-          "npc": "73",
-          "fp": "4",
-          "trace": [
-            {
-              "pc": "73",
-              "xpc": "70",
-              "method": "thread()",
-              "calltype": "process",
-              "vars": { "result": { "type": "address", "value": [] } }
-            }
-          ],
-          "this": { "type": "dict", "value": [] },
-          "local": { "result": { "type": "address", "value": [] } },
-          "push": [ { "type": "int", "value": "1" }, { "type": "dict", "value": [] }, { "type": "dict", "value": [] }, { "type": "int", "value": "0" }, { "type": "bool", "value": "True" } ],
-          "pc": "72"
-        },
-        {
-          "npc": "74",
-          "pop": "1",
-          "push": [ ],
-          "pc": "73"
-        }
+      "idx": 7,
+      "component": 7,
+      "transitions": [
+        [[],[12]]
       ],
-      "invfails": [
-      ],
-      "contexts": [
-        {
-          "tid": "0",
-          "yhash": "257f433b917",
-          "name": "__init__()",
-          "entry": "0",
-          "pc": "110",
-          "fp": "0",
-          "trace": [
-
-          ],
-          "atomic": "1",
-          "mode": "terminated",
-          "this": { "type": "dict", "value": [] }
-        },
-        {
-          "tid": "1",
-          "yhash": "257f433bc47",
-          "name": "thread()",
-          "entry": "70",
-          "pc": "74",
-          "fp": "4",
-          "trace": [
-            {
-              "pc": "74",
-              "xpc": "70",
-              "method": "thread()",
-              "calltype": "process",
-              "vars": { "result": { "type": "address", "value": [] } }
-            }
-          ],
-          "mode": "runnable",
-          "this": { "type": "dict", "value": [] }
-        },
-        {
-          "tid": "2",
-          "yhash": "257f433b467",
-          "name": "thread()",
-          "entry": "70",
-          "pc": "70",
-          "fp": "0",
-          "trace": [
-
-          ],
-          "mode": "runnable",
-          "this": { "type": "dict", "value": [] }
-        }
-      ]
+      "type": "terminal"
     },
     {
-      "id": "5",
-      "tid": "1",
-      "xhash": "257f433bc47",
-      "name": "thread()",
-      "microsteps": [
-        {
-          "npc": "75",
-          "fp": "4",
-          "trace": [
-            {
-              "pc": "75",
-              "xpc": "70",
-              "method": "thread()",
-              "calltype": "process",
-              "vars": { "result": { "type": "address", "value": [] } }
-            }
-          ],
-          "this": { "type": "dict", "value": [] },
-          "local": { "result": { "type": "address", "value": [] } },
-          "push": [ { "type": "int", "value": "1" }, { "type": "dict", "value": [] }, { "type": "dict", "value": [] }, { "type": "int", "value": "0" }, { "type": "dict", "value": [] } ],
-          "pc": "74"
-        },
-        {
-          "npc": "76",
-          "push": [ { "type": "atom", "value": "acquire" } ],
-          "pc": "75"
-        },
-        {
-          "npc": "76",
-          "failure": "Bad index \"acquire\": not in ()",
-          "mode": "failed",
-          "pop": "2",
-          "push": [ ],
-          "pc": "76"
-        }
+      "idx": 8,
+      "component": 6,
+      "transitions": [
+        [[],[15,12]]
       ],
-      "invfails": [
+      "type": "normal"
+    },
+    {
+      "idx": 12,
+      "component": 7,
+      "transitions": [
+        [[],[14]]
       ],
-      "contexts": [
-        {
-          "tid": "0",
-          "yhash": "257f433b917",
-          "name": "__init__()",
-          "entry": "0",
-          "pc": "110",
-          "fp": "0",
-          "trace": [
-
-          ],
-          "atomic": "1",
-          "mode": "terminated",
-          "this": { "type": "dict", "value": [] }
-        },
-        {
-          "tid": "1",
-          "yhash": "257f433bc17",
-          "name": "thread()",
-          "entry": "70",
-          "pc": "76",
-          "fp": "4",
-          "trace": [
-            {
-              "pc": "76",
-              "xpc": "70",
-              "method": "thread()",
-              "calltype": "process",
-              "vars": { "result": { "type": "address", "value": [] } }
-            }
-          ],
-          "failure": "Bad index \"acquire\": not in ()",
-          "mode": "failed",
-          "this": { "type": "dict", "value": [] }
-        },
-        {
-          "tid": "2",
-          "yhash": "257f433b467",
-          "name": "thread()",
-          "entry": "70",
-          "pc": "70",
-          "fp": "0",
-          "trace": [
-
-          ],
-          "mode": "runnable",
-          "this": { "type": "dict", "value": [] }
-        }
-      ]
+      "type": "normal"
+    },
+    {
+      "idx": 14,
+      "component": 7,
+      "transitions": [
+        [[],[16]]
+      ],
+      "type": "normal"
+    },
+    {
+      "idx": 15,
+      "component": 6,
+      "transitions": [
+        [[],[17,15]]
+      ],
+      "type": "normal"
+    },
+    {
+      "idx": 16,
+      "component": 7,
+      "transitions": [
+        [[],[7]]
+      ],
+      "type": "normal"
+    },
+    {
+      "idx": 17,
+      "component": 6,
+      "transitions": [
+        [[],[8,17]]
+      ],
+      "type": "normal"
     }
   ],
   "code": [
@@ -1946,7 +1292,7 @@ var state =
     "StoreVar result",
     "Return",
     "Jump 65",
-    "Frame aquire lk",
+    "Frame acquire lk",
     "Push PC(4)",
     "Push ()",
     "Push 0",
@@ -1984,21 +1330,19 @@ var state =
     "Push ()",
     "Apply",
     "Store lock",
-    "Jump 97",
+    "Jump 95",
     "Frame thread ()",
     "Push { False, True }",
     "Choose",
-    "JumpCond False 96",
-    "Load synch",
-    "Push \"acquire\"",
-    "Apply",
+    "JumpCond False 94",
+    "Push PC(31)",
     "Push ?lock",
     "Apply",
     "Pop",
     "AtomicInc(eager)",
     "ReadonlyInc",
     "AtomicInc(lazy)",
-    "Push PC(80)",
+    "Push PC(78)",
     "1-ary countLabel",
     "Push 1",
     "2-ary ==",
@@ -2013,18 +1357,18 @@ var state =
     "Jump 71",
     "Return",
     "Push { 1, 2 }",
-    "StoreVar $s88",
-    "LoadVar $s88",
+    "StoreVar $s86",
+    "LoadVar $s86",
     "1-ary IsEmpty",
-    "JumpCond True 109",
-    "Cut($s88, i)",
+    "JumpCond True 107",
+    "Cut($s86, i)",
     "DelVar i",
     "Push PC(70)",
     "Push ()",
     "Push ()",
     "Spawn",
-    "Jump 99",
-    "DelVar $s88",
+    "Jump 97",
+    "DelVar $s86",
     "Return",
     "DelVar result"
   ],
@@ -2060,7 +1404,7 @@ var state =
     "pop a value and store in result",
     "restore caller method state and push result",
     "set program counter to 65",
-    "start of method aquire",
+    "start of method acquire",
     "push constant PC(4)",
     "push constant ()",
     "push constant 0",
@@ -2098,21 +1442,19 @@ var state =
     "push constant ()",
     "pop a pc or dictionary f and an index i and push f(i)",
     "pop a value and store it in shared variable lock",
-    "set program counter to 97",
+    "set program counter to 95",
     "start of method thread",
     "push constant { False, True }",
     "pop a set value and push one of its elements",
-    "pop a value and jump to 96 if the value is False",
-    "push value of shared variable synch",
-    "push constant \"acquire\"",
-    "pop a pc or dictionary f and an index i and push f(i)",
+    "pop a value and jump to 94 if the value is False",
+    "push constant PC(31)",
     "push constant ?lock",
     "pop a pc or dictionary f and an index i and push f(i)",
     "discard the top value on the stack",
     "increment atomic counter of context; thread runs uninterrupted if larger than 0",
     "increment readonly counter of context; thread cannot mutate shared variables if > 0",
     "increment atomic counter of context; thread runs uninterrupted if larger than 0",
-    "push constant PC(80)",
+    "push constant PC(78)",
     "pop 1 value and push the result of applying countLabel",
     "push constant 1",
     "pop 2 values and push the result of applying ==",
@@ -2127,18 +1469,18 @@ var state =
     "set program counter to 71",
     "restore caller method state and push result",
     "push constant { 1, 2 }",
-    "pop a value and store in $s88",
-    "push the value of $s88",
+    "pop a value and store in $s86",
+    "push the value of $s86",
     "pop 1 value and push the result of applying IsEmpty",
-    "pop a value and jump to 109 if the value is True",
-    "remove smallest element from $s88 and assign to i",
+    "pop a value and jump to 107 if the value is True",
+    "remove smallest element from $s86 and assign to i",
     "delete method variable i",
     "push constant PC(70)",
     "push constant ()",
     "push constant ()",
     "pop thread-local state, argument, and pc and spawn a new thread",
-    "set program counter to 99",
-    "delete method variable $s88",
+    "set program counter to 97",
+    "delete method variable $s86",
     "restore caller method state and push result",
     "delete method variable result"
   ],
@@ -2154,7 +1496,6 @@ var state =
     "56": { "file": "caslock.hny", "line": "15", "code": "  cas(lk, True, False)" },
     "71": { "file": "cssynch.hny", "line": "8", "code": "    while choose({ False, True }):" },
     "9": { "file": "caslock.hny", "line": "3", "code": "    result = !p == old" },
-    "111": { "file": "cssynch.hny", "line": "14", "code": "    spawn thread()" },
     "41": { "file": "caslock.hny", "line": "11", "code": "  while not cas(lk, False, True):" },
     "8": { "file": "caslock.hny", "line": "3", "code": "    result = !p == old" },
     "61": { "file": "caslock.hny", "line": "15", "code": "  cas(lk, True, False)" },
@@ -2166,7 +1507,6 @@ var state =
     "40": { "file": "caslock.hny", "line": "11", "code": "  while not cas(lk, False, True):" },
     "53": { "file": "caslock.hny", "line": "15", "code": "  cas(lk, True, False)" },
     "10": { "file": "caslock.hny", "line": "3", "code": "    result = !p == old" },
-    "110": { "file": "cssynch.hny", "line": "14", "code": "    spawn thread()" },
     "70": { "file": "cssynch.hny", "line": "7", "code": "def thread():" },
     "60": { "file": "caslock.hny", "line": "15", "code": "  cas(lk, True, False)" },
     "108": { "file": "cssynch.hny", "line": "14", "code": "    spawn thread()" },
@@ -2174,7 +1514,7 @@ var state =
     "20": { "file": "caslock.hny", "line": "5", "code": "      !p = new" },
     "109": { "file": "cssynch.hny", "line": "14", "code": "    spawn thread()" },
     "4": { "file": "caslock.hny", "line": "1", "code": "def cas(p, old, new):" },
-    "30": { "file": "caslock.hny", "line": "10", "code": "def aquire(lk):" },
+    "30": { "file": "caslock.hny", "line": "10", "code": "def acquire(lk):" },
     "7": { "file": "caslock.hny", "line": "3", "code": "    result = !p == old" },
     "6": { "file": "caslock.hny", "line": "2", "code": "  atomically:" },
     "85": { "file": "cssynch.hny", "line": "10", "code": "        cs: assert countLabel(cs) == 1" },
@@ -2196,32 +1536,32 @@ var state =
     "65": { "file": "cssynch.hny", "line": "5", "code": "lock = synch.Lock()" },
     "55": { "file": "caslock.hny", "line": "15", "code": "  cas(lk, True, False)" },
     "45": { "file": "caslock.hny", "line": "12", "code": "    pass" },
-    "89": { "file": "cssynch.hny", "line": "10", "code": "        cs: assert countLabel(cs) == 1" },
+    "89": { "file": "cssynch.hny", "line": "11", "code": "        synch.release(?lock)" },
     "18": { "file": "caslock.hny", "line": "5", "code": "      !p = new" },
     "100": { "file": "cssynch.hny", "line": "13", "code": "for i in {1..NTHREADS}:" },
     "69": { "file": "cssynch.hny", "line": "7", "code": "def thread():" },
-    "96": { "file": "cssynch.hny", "line": "11", "code": "        synch.release(?lock)" },
+    "96": { "file": "cssynch.hny", "line": "13", "code": "for i in {1..NTHREADS}:" },
     "81": { "file": "cssynch.hny", "line": "10", "code": "        cs: assert countLabel(cs) == 1" },
-    "79": { "file": "cssynch.hny", "line": "9", "code": "        synch.acquire(?lock)" },
+    "79": { "file": "cssynch.hny", "line": "10", "code": "        cs: assert countLabel(cs) == 1" },
     "25": { "file": "caslock.hny", "line": "7", "code": "def Lock():" },
     "91": { "file": "cssynch.hny", "line": "11", "code": "        synch.release(?lock)" },
     "35": { "file": "caslock.hny", "line": "11", "code": "  while not cas(lk, False, True):" },
     "49": { "file": "caslock.hny", "line": "14", "code": "def release(lk):" },
     "106": { "file": "cssynch.hny", "line": "14", "code": "    spawn thread()" },
-    "78": { "file": "cssynch.hny", "line": "9", "code": "        synch.acquire(?lock)" },
-    "102": { "file": "cssynch.hny", "line": "13", "code": "for i in {1..NTHREADS}:" },
+    "78": { "file": "cssynch.hny", "line": "10", "code": "        cs: assert countLabel(cs) == 1" },
+    "102": { "file": "cssynch.hny", "line": "14", "code": "    spawn thread()" },
     "68": { "file": "cssynch.hny", "line": "5", "code": "lock = synch.Lock()" },
     "107": { "file": "cssynch.hny", "line": "14", "code": "    spawn thread()" },
     "80": { "file": "cssynch.hny", "line": "10", "code": "        cs: assert countLabel(cs) == 1" },
     "34": { "file": "caslock.hny", "line": "11", "code": "  while not cas(lk, False, True):" },
-    "101": { "file": "cssynch.hny", "line": "13", "code": "for i in {1..NTHREADS}:" },
+    "101": { "file": "cssynch.hny", "line": "14", "code": "    spawn thread()" },
     "24": { "file": "caslock.hny", "line": "7", "code": "def Lock():" },
     "19": { "file": "caslock.hny", "line": "5", "code": "      !p = new" },
-    "90": { "file": "cssynch.hny", "line": "10", "code": "        cs: assert countLabel(cs) == 1" },
+    "90": { "file": "cssynch.hny", "line": "11", "code": "        synch.release(?lock)" },
     "48": { "file": "caslock.hny", "line": "14", "code": "def release(lk):" },
     "27": { "file": "caslock.hny", "line": "8", "code": "  result = False" },
     "84": { "file": "cssynch.hny", "line": "10", "code": "        cs: assert countLabel(cs) == 1" },
-    "95": { "file": "cssynch.hny", "line": "11", "code": "        synch.release(?lock)" },
+    "95": { "file": "cssynch.hny", "line": "13", "code": "for i in {1..NTHREADS}:" },
     "37": { "file": "caslock.hny", "line": "11", "code": "  while not cas(lk, False, True):" },
     "26": { "file": "caslock.hny", "line": "8", "code": "  result = False" },
     "105": { "file": "cssynch.hny", "line": "14", "code": "    spawn thread()" },
@@ -2232,7 +1572,7 @@ var state =
     "86": { "file": "cssynch.hny", "line": "10", "code": "        cs: assert countLabel(cs) == 1" },
     "36": { "file": "caslock.hny", "line": "11", "code": "  while not cas(lk, False, True):" },
     "87": { "file": "cssynch.hny", "line": "10", "code": "        cs: assert countLabel(cs) == 1" },
-    "31": { "file": "caslock.hny", "line": "10", "code": "def aquire(lk):" },
+    "31": { "file": "caslock.hny", "line": "10", "code": "def acquire(lk):" },
     "21": { "file": "caslock.hny", "line": "5", "code": "      !p = new" },
     "16": { "file": "caslock.hny", "line": "5", "code": "      !p = new" },
     "64": { "file": "caslock.hny", "line": "15", "code": "  cas(lk, True, False)" },
