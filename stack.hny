@@ -1,0 +1,8 @@
+import list
+
+def Stack():
+    result = []
+
+def push(s, v):
+
+def pop(s):
