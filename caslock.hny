@@ -7,7 +7,7 @@ def cas(p, old, new):
 def Lock():
   result = False
 
-def aquire(lk):
+def acquire(lk):
   while not cas(lk, False, True):
     pass
 
