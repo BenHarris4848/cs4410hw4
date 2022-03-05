@@ -1,0 +1,925 @@
+{
+  "issue": "Safety violation",
+  "macrosteps": [
+    {
+      "id": "1",
+      "tid": "0",
+      "xhash": "257f433b1f7",
+      "name": "__init__()",
+      "microsteps": [
+        {
+          "shared": { },
+          "npc": "1",
+          "fp": "4",
+          "trace": [
+            {
+              "pc": "1",
+              "xpc": "0",
+              "method": "__init__()",
+              "calltype": "process",
+              "vars": { "result": { "type": "address", "value": [] } }
+            }
+          ],
+          "this": { "type": "dict", "value": [] },
+          "local": { "result": { "type": "address", "value": [] } },
+          "atomic": "1",
+          "push": [ { "type": "int", "value": "1" }, { "type": "dict", "value": [] }, { "type": "dict", "value": [] }, { "type": "int", "value": "0" } ],
+          "pc": "0"
+        },
+        {
+          "npc": "2",
+          "push": [ { "type": "dict", "value": [] } ],
+          "pc": "1"
+        },
+        {
+          "shared": { "synch": { "type": "dict", "value": [] } },
+          "npc": "3",
+          "pop": "1",
+          "push": [ ],
+          "pc": "2"
+        },
+        {
+          "npc": "65",
+          "push": [ ],
+          "pc": "3"
+        },
+        {
+          "npc": "66",
+          "push": [ { "type": "pc", "value": "25" } ],
+          "pc": "65"
+        },
+        {
+          "npc": "67",
+          "push": [ { "type": "dict", "value": [] } ],
+          "pc": "66"
+        },
+        {
+          "npc": "25",
+          "pop": "2",
+          "push": [ { "type": "pc", "value": "68" }, { "type": "int", "value": "2" }, { "type": "dict", "value": [] } ],
+          "pc": "67"
+        },
+        {
+          "npc": "26",
+          "fp": "9",
+          "trace": [
+            {
+              "pc": "68",
+              "xpc": "0",
+              "method": "__init__()",
+              "calltype": "process",
+              "vars": { "result": { "type": "address", "value": [] } }
+            },
+            {
+              "pc": "26",
+              "xpc": "25",
+              "method": "Lock()",
+              "calltype": "normal",
+              "vars": { "result": { "type": "address", "value": [] } }
+            }
+          ],
+          "push": [ { "type": "dict", "value": [{ "key": { "type": "atom", "value": "result" }, "value": { "type": "address", "value": [] } } ] }, { "type": "int", "value": "4" } ],
+          "pc": "25"
+        },
+        {
+          "npc": "27",
+          "local": { },
+          "push": [ ],
+          "pc": "26"
+        },
+        {
+          "npc": "28",
+          "push": [ { "type": "bool", "value": "False" } ],
+          "pc": "27"
+        },
+        {
+          "npc": "29",
+          "local": { "result": { "type": "bool", "value": "False" } },
+          "pop": "1",
+          "push": [ ],
+          "pc": "28"
+        },
+        {
+          "npc": "68",
+          "fp": "4",
+          "trace": [
+            {
+              "pc": "68",
+              "xpc": "0",
+              "method": "__init__()",
+              "calltype": "process",
+              "vars": { "result": { "type": "address", "value": [] } }
+            }
+          ],
+          "local": { "result": { "type": "address", "value": [] } },
+          "pop": "5",
+          "push": [ { "type": "bool", "value": "False" } ],
+          "pc": "29"
+        },
+        {
+          "shared": { "lock": { "type": "bool", "value": "False" }, "synch": { "type": "dict", "value": [] } },
+          "npc": "69",
+          "pop": "1",
+          "push": [ ],
+          "pc": "68"
+        },
+        {
+          "npc": "97",
+          "push": [ ],
+          "pc": "69"
+        },
+        {
+          "npc": "98",
+          "push": [ { "type": "set", "value": [{ "type": "int", "value": "1" }, { "type": "int", "value": "2" } ] } ],
+          "pc": "97"
+        },
+        {
+          "npc": "99",
+          "local": { "$s88": { "type": "set", "value": [{ "type": "int", "value": "1" }, { "type": "int", "value": "2" } ] }, "result": { "type": "address", "value": [] } },
+          "pop": "1",
+          "push": [ ],
+          "pc": "98"
+        },
+        {
+          "npc": "100",
+          "push": [ { "type": "set", "value": [{ "type": "int", "value": "1" }, { "type": "int", "value": "2" } ] } ],
+          "pc": "99"
+        },
+        {
+          "npc": "101",
+          "pop": "1",
+          "push": [ { "type": "bool", "value": "False" } ],
+          "pc": "100"
+        },
+        {
+          "npc": "102",
+          "pop": "1",
+          "push": [ ],
+          "pc": "101"
+        },
+        {
+          "npc": "103",
+          "local": { "$s88": { "type": "set", "value": [{ "type": "int", "value": "2" } ] }, "i": { "type": "int", "value": "1" }, "result": { "type": "address", "value": [] } },
+          "push": [ ],
+          "pc": "102"
+        },
+        {
+          "npc": "104",
+          "local": { "$s88": { "type": "set", "value": [{ "type": "int", "value": "2" } ] }, "result": { "type": "address", "value": [] } },
+          "push": [ ],
+          "pc": "103"
+        },
+        {
+          "npc": "105",
+          "push": [ { "type": "pc", "value": "70" } ],
+          "pc": "104"
+        },
+        {
+          "npc": "106",
+          "push": [ { "type": "dict", "value": [] } ],
+          "pc": "105"
+        },
+        {
+          "npc": "107",
+          "push": [ { "type": "dict", "value": [] } ],
+          "pc": "106"
+        },
+        {
+          "npc": "108",
+          "pop": "3",
+          "push": [ ],
+          "pc": "107"
+        },
+        {
+          "npc": "99",
+          "push": [ ],
+          "pc": "108"
+        },
+        {
+          "npc": "100",
+          "push": [ { "type": "set", "value": [{ "type": "int", "value": "2" } ] } ],
+          "pc": "99"
+        },
+        {
+          "npc": "101",
+          "pop": "1",
+          "push": [ { "type": "bool", "value": "False" } ],
+          "pc": "100"
+        },
+        {
+          "npc": "102",
+          "pop": "1",
+          "push": [ ],
+          "pc": "101"
+        },
+        {
+          "npc": "103",
+          "local": { "$s88": { "type": "set", "value": [] }, "i": { "type": "int", "value": "2" }, "result": { "type": "address", "value": [] } },
+          "push": [ ],
+          "pc": "102"
+        },
+        {
+          "npc": "104",
+          "local": { "$s88": { "type": "set", "value": [] }, "result": { "type": "address", "value": [] } },
+          "push": [ ],
+          "pc": "103"
+        },
+        {
+          "npc": "105",
+          "push": [ { "type": "pc", "value": "70" } ],
+          "pc": "104"
+        },
+        {
+          "npc": "106",
+          "push": [ { "type": "dict", "value": [] } ],
+          "pc": "105"
+        },
+        {
+          "npc": "107",
+          "push": [ { "type": "dict", "value": [] } ],
+          "pc": "106"
+        },
+        {
+          "npc": "108",
+          "pop": "3",
+          "push": [ ],
+          "pc": "107"
+        },
+        {
+          "npc": "99",
+          "push": [ ],
+          "pc": "108"
+        },
+        {
+          "npc": "100",
+          "push": [ { "type": "set", "value": [] } ],
+          "pc": "99"
+        },
+        {
+          "npc": "101",
+          "pop": "1",
+          "push": [ { "type": "bool", "value": "True" } ],
+          "pc": "100"
+        },
+        {
+          "npc": "109",
+          "pop": "1",
+          "push": [ ],
+          "pc": "101"
+        },
+        {
+          "npc": "110",
+          "local": { "result": { "type": "address", "value": [] } },
+          "push": [ ],
+          "pc": "109"
+        },
+        {
+          "npc": "110",
+          "fp": "0",
+          "trace": [
+
+          ],
+          "local": { },
+          "mode": "terminated",
+          "pop": "4",
+          "push": [ ],
+          "pc": "110"
+        }
+      ],
+      "invfails": [
+      ],
+      "contexts": [
+        {
+          "tid": "0",
+          "yhash": "257f433b917",
+          "name": "__init__()",
+          "entry": "0",
+          "pc": "110",
+          "fp": "0",
+          "trace": [
+
+          ],
+          "atomic": "1",
+          "mode": "terminated",
+          "this": { "type": "dict", "value": [] }
+        },
+        {
+          "tid": "1",
+          "yhash": "257f433b467",
+          "name": "thread()",
+          "entry": "70",
+          "pc": "70",
+          "fp": "0",
+          "trace": [
+
+          ],
+          "mode": "runnable",
+          "this": { "type": "dict", "value": [] }
+        },
+        {
+          "tid": "2",
+          "yhash": "257f433b467",
+          "name": "thread()",
+          "entry": "70",
+          "pc": "70",
+          "fp": "0",
+          "trace": [
+
+          ],
+          "mode": "runnable",
+          "this": { "type": "dict", "value": [] }
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "tid": "1",
+      "xhash": "257f433b467",
+      "name": "thread()",
+      "microsteps": [
+        {
+          "npc": "71",
+          "fp": "4",
+          "trace": [
+            {
+              "pc": "71",
+              "xpc": "70",
+              "method": "thread()",
+              "calltype": "process",
+              "vars": { "result": { "type": "address", "value": [] } }
+            }
+          ],
+          "this": { "type": "dict", "value": [] },
+          "local": { "result": { "type": "address", "value": [] } },
+          "push": [ { "type": "int", "value": "1" }, { "type": "dict", "value": [] }, { "type": "dict", "value": [] }, { "type": "int", "value": "0" } ],
+          "pc": "70"
+        },
+        {
+          "npc": "72",
+          "push": [ { "type": "set", "value": [{ "type": "bool", "value": "False" }, { "type": "bool", "value": "True" } ] } ],
+          "pc": "71"
+        }
+      ],
+      "invfails": [
+      ],
+      "contexts": [
+        {
+          "tid": "0",
+          "yhash": "257f433b917",
+          "name": "__init__()",
+          "entry": "0",
+          "pc": "110",
+          "fp": "0",
+          "trace": [
+
+          ],
+          "atomic": "1",
+          "mode": "terminated",
+          "this": { "type": "dict", "value": [] }
+        },
+        {
+          "tid": "1",
+          "yhash": "257f433b797",
+          "name": "thread()",
+          "entry": "70",
+          "pc": "72",
+          "fp": "4",
+          "trace": [
+            {
+              "pc": "72",
+              "xpc": "70",
+              "method": "thread()",
+              "calltype": "process",
+              "vars": { "result": { "type": "address", "value": [] } }
+            }
+          ],
+          "mode": "choosing",
+          "this": { "type": "dict", "value": [] }
+        },
+        {
+          "tid": "2",
+          "yhash": "257f433b467",
+          "name": "thread()",
+          "entry": "70",
+          "pc": "70",
+          "fp": "0",
+          "trace": [
+
+          ],
+          "mode": "runnable",
+          "this": { "type": "dict", "value": [] }
+        }
+      ]
+    },
+    {
+      "id": "3",
+      "tid": "1",
+      "xhash": "257f433b797",
+      "name": "thread()",
+      "microsteps": [
+        {
+          "choose": { "type": "bool", "value": "True" },
+          "npc": "73",
+          "fp": "4",
+          "trace": [
+            {
+              "pc": "73",
+              "xpc": "70",
+              "method": "thread()",
+              "calltype": "process",
+              "vars": { "result": { "type": "address", "value": [] } }
+            }
+          ],
+          "this": { "type": "dict", "value": [] },
+          "local": { "result": { "type": "address", "value": [] } },
+          "push": [ { "type": "int", "value": "1" }, { "type": "dict", "value": [] }, { "type": "dict", "value": [] }, { "type": "int", "value": "0" }, { "type": "bool", "value": "True" } ],
+          "pc": "72"
+        },
+        {
+          "npc": "74",
+          "pop": "1",
+          "push": [ ],
+          "pc": "73"
+        }
+      ],
+      "invfails": [
+      ],
+      "contexts": [
+        {
+          "tid": "0",
+          "yhash": "257f433b917",
+          "name": "__init__()",
+          "entry": "0",
+          "pc": "110",
+          "fp": "0",
+          "trace": [
+
+          ],
+          "atomic": "1",
+          "mode": "terminated",
+          "this": { "type": "dict", "value": [] }
+        },
+        {
+          "tid": "1",
+          "yhash": "257f433bc47",
+          "name": "thread()",
+          "entry": "70",
+          "pc": "74",
+          "fp": "4",
+          "trace": [
+            {
+              "pc": "74",
+              "xpc": "70",
+              "method": "thread()",
+              "calltype": "process",
+              "vars": { "result": { "type": "address", "value": [] } }
+            }
+          ],
+          "mode": "runnable",
+          "this": { "type": "dict", "value": [] }
+        },
+        {
+          "tid": "2",
+          "yhash": "257f433b467",
+          "name": "thread()",
+          "entry": "70",
+          "pc": "70",
+          "fp": "0",
+          "trace": [
+
+          ],
+          "mode": "runnable",
+          "this": { "type": "dict", "value": [] }
+        }
+      ]
+    },
+    {
+      "id": "5",
+      "tid": "1",
+      "xhash": "257f433bc47",
+      "name": "thread()",
+      "microsteps": [
+        {
+          "npc": "75",
+          "fp": "4",
+          "trace": [
+            {
+              "pc": "75",
+              "xpc": "70",
+              "method": "thread()",
+              "calltype": "process",
+              "vars": { "result": { "type": "address", "value": [] } }
+            }
+          ],
+          "this": { "type": "dict", "value": [] },
+          "local": { "result": { "type": "address", "value": [] } },
+          "push": [ { "type": "int", "value": "1" }, { "type": "dict", "value": [] }, { "type": "dict", "value": [] }, { "type": "int", "value": "0" }, { "type": "dict", "value": [] } ],
+          "pc": "74"
+        },
+        {
+          "npc": "76",
+          "push": [ { "type": "atom", "value": "acquire" } ],
+          "pc": "75"
+        },
+        {
+          "npc": "76",
+          "failure": "Bad index \"acquire\": not in ()",
+          "mode": "failed",
+          "pop": "2",
+          "push": [ ],
+          "pc": "76"
+        }
+      ],
+      "invfails": [
+      ],
+      "contexts": [
+        {
+          "tid": "0",
+          "yhash": "257f433b917",
+          "name": "__init__()",
+          "entry": "0",
+          "pc": "110",
+          "fp": "0",
+          "trace": [
+
+          ],
+          "atomic": "1",
+          "mode": "terminated",
+          "this": { "type": "dict", "value": [] }
+        },
+        {
+          "tid": "1",
+          "yhash": "257f433bc17",
+          "name": "thread()",
+          "entry": "70",
+          "pc": "76",
+          "fp": "4",
+          "trace": [
+            {
+              "pc": "76",
+              "xpc": "70",
+              "method": "thread()",
+              "calltype": "process",
+              "vars": { "result": { "type": "address", "value": [] } }
+            }
+          ],
+          "failure": "Bad index \"acquire\": not in ()",
+          "mode": "failed",
+          "this": { "type": "dict", "value": [] }
+        },
+        {
+          "tid": "2",
+          "yhash": "257f433b467",
+          "name": "thread()",
+          "entry": "70",
+          "pc": "70",
+          "fp": "0",
+          "trace": [
+
+          ],
+          "mode": "runnable",
+          "this": { "type": "dict", "value": [] }
+        }
+      ]
+    }
+  ],
+  "code": [
+    "Frame __init__ ()",
+    "Push ()",
+    "Store synch",
+    "Jump 65",
+    "Frame cas (p, old, new)",
+    "DelVar result",
+    "AtomicInc(lazy)",
+    "LoadVar p",
+    "Load",
+    "LoadVar old",
+    "DelVar old",
+    "2-ary ==",
+    "StoreVar result",
+    "LoadVar result",
+    "JumpCond False 20",
+    "LoadVar p",
+    "DelVar p",
+    "LoadVar new",
+    "DelVar new",
+    "Store",
+    "DelVar new",
+    "DelVar p",
+    "AtomicDec",
+    "Return",
+    "Jump 65",
+    "Frame Lock ()",
+    "DelVar result",
+    "Push False",
+    "StoreVar result",
+    "Return",
+    "Jump 65",
+    "Frame aquire lk",
+    "Push PC(4)",
+    "Push ()",
+    "Push 0",
+    "LoadVar lk",
+    "3-ary DictAdd",
+    "Push 1",
+    "Push False",
+    "3-ary DictAdd",
+    "Push 2",
+    "Push True",
+    "3-ary DictAdd",
+    "Apply",
+    "JumpCond True 46",
+    "Jump 32",
+    "DelVar lk",
+    "Return",
+    "Jump 65",
+    "Frame release lk",
+    "Push PC(4)",
+    "Push ()",
+    "Push 0",
+    "LoadVar lk",
+    "DelVar lk",
+    "3-ary DictAdd",
+    "Push 1",
+    "Push True",
+    "3-ary DictAdd",
+    "Push 2",
+    "Push False",
+    "3-ary DictAdd",
+    "Apply",
+    "Pop",
+    "Return",
+    "Push PC(25)",
+    "Push ()",
+    "Apply",
+    "Store lock",
+    "Jump 97",
+    "Frame thread ()",
+    "Push { False, True }",
+    "Choose",
+    "JumpCond False 96",
+    "Load synch",
+    "Push \"acquire\"",
+    "Apply",
+    "Push ?lock",
+    "Apply",
+    "Pop",
+    "AtomicInc(eager)",
+    "ReadonlyInc",
+    "AtomicInc(lazy)",
+    "Push PC(80)",
+    "1-ary countLabel",
+    "Push 1",
+    "2-ary ==",
+    "Assert",
+    "AtomicDec",
+    "ReadonlyDec",
+    "AtomicDec",
+    "Push PC(49)",
+    "Push ?lock",
+    "Apply",
+    "Pop",
+    "Jump 71",
+    "Return",
+    "Push { 1, 2 }",
+    "StoreVar $s88",
+    "LoadVar $s88",
+    "1-ary IsEmpty",
+    "JumpCond True 109",
+    "Cut($s88, i)",
+    "DelVar i",
+    "Push PC(70)",
+    "Push ()",
+    "Push ()",
+    "Spawn",
+    "Jump 99",
+    "DelVar $s88",
+    "Return",
+    "DelVar result"
+  ],
+  "explain": [
+    "start of method __init__",
+    "push constant ()",
+    "pop a value and store it in shared variable synch",
+    "set program counter to 65",
+    "start of method cas",
+    "delete method variable result",
+    "increment atomic counter of context; thread runs uninterrupted if larger than 0",
+    "push the value of p",
+    "pop an address and push the value at the address",
+    "push the value of old",
+    "delete method variable old",
+    "pop 2 values and push the result of applying ==",
+    "pop a value and store in result",
+    "push the value of result",
+    "pop a value and jump to 20 if the value is False",
+    "push the value of p",
+    "delete method variable p",
+    "push the value of new",
+    "delete method variable new",
+    "pop a value and an address and store the value at the address",
+    "delete method variable new",
+    "delete method variable p",
+    "decrement atomic counter of context",
+    "restore caller method state and push result",
+    "set program counter to 65",
+    "start of method Lock",
+    "delete method variable result",
+    "push constant False",
+    "pop a value and store in result",
+    "restore caller method state and push result",
+    "set program counter to 65",
+    "start of method aquire",
+    "push constant PC(4)",
+    "push constant ()",
+    "push constant 0",
+    "push the value of lk",
+    "pop 3 values and push the result of applying DictAdd",
+    "push constant 1",
+    "push constant False",
+    "pop 3 values and push the result of applying DictAdd",
+    "push constant 2",
+    "push constant True",
+    "pop 3 values and push the result of applying DictAdd",
+    "pop a pc or dictionary f and an index i and push f(i)",
+    "pop a value and jump to 46 if the value is True",
+    "set program counter to 32",
+    "delete method variable lk",
+    "restore caller method state and push result",
+    "set program counter to 65",
+    "start of method release",
+    "push constant PC(4)",
+    "push constant ()",
+    "push constant 0",
+    "push the value of lk",
+    "delete method variable lk",
+    "pop 3 values and push the result of applying DictAdd",
+    "push constant 1",
+    "push constant True",
+    "pop 3 values and push the result of applying DictAdd",
+    "push constant 2",
+    "push constant False",
+    "pop 3 values and push the result of applying DictAdd",
+    "pop a pc or dictionary f and an index i and push f(i)",
+    "discard the top value on the stack",
+    "restore caller method state and push result",
+    "push constant PC(25)",
+    "push constant ()",
+    "pop a pc or dictionary f and an index i and push f(i)",
+    "pop a value and store it in shared variable lock",
+    "set program counter to 97",
+    "start of method thread",
+    "push constant { False, True }",
+    "pop a set value and push one of its elements",
+    "pop a value and jump to 96 if the value is False",
+    "push value of shared variable synch",
+    "push constant \"acquire\"",
+    "pop a pc or dictionary f and an index i and push f(i)",
+    "push constant ?lock",
+    "pop a pc or dictionary f and an index i and push f(i)",
+    "discard the top value on the stack",
+    "increment atomic counter of context; thread runs uninterrupted if larger than 0",
+    "increment readonly counter of context; thread cannot mutate shared variables if > 0",
+    "increment atomic counter of context; thread runs uninterrupted if larger than 0",
+    "push constant PC(80)",
+    "pop 1 value and push the result of applying countLabel",
+    "push constant 1",
+    "pop 2 values and push the result of applying ==",
+    "pop a condition and raise exception if condition is false",
+    "decrement atomic counter of context",
+    "decrement readonly counter of context",
+    "decrement atomic counter of context",
+    "push constant PC(49)",
+    "push constant ?lock",
+    "pop a pc or dictionary f and an index i and push f(i)",
+    "discard the top value on the stack",
+    "set program counter to 71",
+    "restore caller method state and push result",
+    "push constant { 1, 2 }",
+    "pop a value and store in $s88",
+    "push the value of $s88",
+    "pop 1 value and push the result of applying IsEmpty",
+    "pop a value and jump to 109 if the value is True",
+    "remove smallest element from $s88 and assign to i",
+    "delete method variable i",
+    "push constant PC(70)",
+    "push constant ()",
+    "push constant ()",
+    "pop thread-local state, argument, and pc and spawn a new thread",
+    "set program counter to 99",
+    "delete method variable $s88",
+    "restore caller method state and push result",
+    "delete method variable result"
+  ],
+  "locations": {
+    "72": { "file": "cssynch.hny", "line": "8", "code": "    while choose({ False, True }):" },
+    "43": { "file": "caslock.hny", "line": "11", "code": "  while not cas(lk, False, True):" },
+    "50": { "file": "caslock.hny", "line": "15", "code": "  cas(lk, True, False)" },
+    "62": { "file": "caslock.hny", "line": "15", "code": "  cas(lk, True, False)" },
+    "42": { "file": "caslock.hny", "line": "11", "code": "  while not cas(lk, False, True):" },
+    "51": { "file": "caslock.hny", "line": "15", "code": "  cas(lk, True, False)" },
+    "3": { "file": "caslock.hny", "line": "1", "code": "def cas(p, old, new):" },
+    "12": { "file": "caslock.hny", "line": "3", "code": "    result = !p == old" },
+    "56": { "file": "caslock.hny", "line": "15", "code": "  cas(lk, True, False)" },
+    "71": { "file": "cssynch.hny", "line": "8", "code": "    while choose({ False, True }):" },
+    "9": { "file": "caslock.hny", "line": "3", "code": "    result = !p == old" },
+    "111": { "file": "cssynch.hny", "line": "14", "code": "    spawn thread()" },
+    "41": { "file": "caslock.hny", "line": "11", "code": "  while not cas(lk, False, True):" },
+    "8": { "file": "caslock.hny", "line": "3", "code": "    result = !p == old" },
+    "61": { "file": "caslock.hny", "line": "15", "code": "  cas(lk, True, False)" },
+    "13": { "file": "caslock.hny", "line": "4", "code": "    if result:" },
+    "52": { "file": "caslock.hny", "line": "15", "code": "  cas(lk, True, False)" },
+    "63": { "file": "caslock.hny", "line": "15", "code": "  cas(lk, True, False)" },
+    "73": { "file": "cssynch.hny", "line": "8", "code": "    while choose({ False, True }):" },
+    "11": { "file": "caslock.hny", "line": "3", "code": "    result = !p == old" },
+    "40": { "file": "caslock.hny", "line": "11", "code": "  while not cas(lk, False, True):" },
+    "53": { "file": "caslock.hny", "line": "15", "code": "  cas(lk, True, False)" },
+    "10": { "file": "caslock.hny", "line": "3", "code": "    result = !p == old" },
+    "110": { "file": "cssynch.hny", "line": "14", "code": "    spawn thread()" },
+    "70": { "file": "cssynch.hny", "line": "7", "code": "def thread():" },
+    "60": { "file": "caslock.hny", "line": "15", "code": "  cas(lk, True, False)" },
+    "108": { "file": "cssynch.hny", "line": "14", "code": "    spawn thread()" },
+    "67": { "file": "cssynch.hny", "line": "5", "code": "lock = synch.Lock()" },
+    "20": { "file": "caslock.hny", "line": "5", "code": "      !p = new" },
+    "109": { "file": "cssynch.hny", "line": "14", "code": "    spawn thread()" },
+    "4": { "file": "caslock.hny", "line": "1", "code": "def cas(p, old, new):" },
+    "30": { "file": "caslock.hny", "line": "10", "code": "def aquire(lk):" },
+    "7": { "file": "caslock.hny", "line": "3", "code": "    result = !p == old" },
+    "6": { "file": "caslock.hny", "line": "2", "code": "  atomically:" },
+    "85": { "file": "cssynch.hny", "line": "10", "code": "        cs: assert countLabel(cs) == 1" },
+    "47": { "file": "caslock.hny", "line": "12", "code": "    pass" },
+    "17": { "file": "caslock.hny", "line": "5", "code": "      !p = new" },
+    "77": { "file": "cssynch.hny", "line": "9", "code": "        synch.acquire(?lock)" },
+    "22": { "file": "caslock.hny", "line": "5", "code": "      !p = new" },
+    "32": { "file": "caslock.hny", "line": "11", "code": "  while not cas(lk, False, True):" },
+    "15": { "file": "caslock.hny", "line": "5", "code": "      !p = new" },
+    "103": { "file": "cssynch.hny", "line": "14", "code": "    spawn thread()" },
+    "39": { "file": "caslock.hny", "line": "11", "code": "  while not cas(lk, False, True):" },
+    "29": { "file": "caslock.hny", "line": "8", "code": "  result = False" },
+    "82": { "file": "cssynch.hny", "line": "10", "code": "        cs: assert countLabel(cs) == 1" },
+    "92": { "file": "cssynch.hny", "line": "11", "code": "        synch.release(?lock)" },
+    "57": { "file": "caslock.hny", "line": "15", "code": "  cas(lk, True, False)" },
+    "99": { "file": "cssynch.hny", "line": "13", "code": "for i in {1..NTHREADS}:" },
+    "5": { "file": "caslock.hny", "line": "2", "code": "  atomically:" },
+    "75": { "file": "cssynch.hny", "line": "9", "code": "        synch.acquire(?lock)" },
+    "65": { "file": "cssynch.hny", "line": "5", "code": "lock = synch.Lock()" },
+    "55": { "file": "caslock.hny", "line": "15", "code": "  cas(lk, True, False)" },
+    "45": { "file": "caslock.hny", "line": "12", "code": "    pass" },
+    "89": { "file": "cssynch.hny", "line": "10", "code": "        cs: assert countLabel(cs) == 1" },
+    "18": { "file": "caslock.hny", "line": "5", "code": "      !p = new" },
+    "100": { "file": "cssynch.hny", "line": "13", "code": "for i in {1..NTHREADS}:" },
+    "69": { "file": "cssynch.hny", "line": "7", "code": "def thread():" },
+    "96": { "file": "cssynch.hny", "line": "11", "code": "        synch.release(?lock)" },
+    "81": { "file": "cssynch.hny", "line": "10", "code": "        cs: assert countLabel(cs) == 1" },
+    "79": { "file": "cssynch.hny", "line": "9", "code": "        synch.acquire(?lock)" },
+    "25": { "file": "caslock.hny", "line": "7", "code": "def Lock():" },
+    "91": { "file": "cssynch.hny", "line": "11", "code": "        synch.release(?lock)" },
+    "35": { "file": "caslock.hny", "line": "11", "code": "  while not cas(lk, False, True):" },
+    "49": { "file": "caslock.hny", "line": "14", "code": "def release(lk):" },
+    "106": { "file": "cssynch.hny", "line": "14", "code": "    spawn thread()" },
+    "78": { "file": "cssynch.hny", "line": "9", "code": "        synch.acquire(?lock)" },
+    "102": { "file": "cssynch.hny", "line": "13", "code": "for i in {1..NTHREADS}:" },
+    "68": { "file": "cssynch.hny", "line": "5", "code": "lock = synch.Lock()" },
+    "107": { "file": "cssynch.hny", "line": "14", "code": "    spawn thread()" },
+    "80": { "file": "cssynch.hny", "line": "10", "code": "        cs: assert countLabel(cs) == 1" },
+    "34": { "file": "caslock.hny", "line": "11", "code": "  while not cas(lk, False, True):" },
+    "101": { "file": "cssynch.hny", "line": "13", "code": "for i in {1..NTHREADS}:" },
+    "24": { "file": "caslock.hny", "line": "7", "code": "def Lock():" },
+    "19": { "file": "caslock.hny", "line": "5", "code": "      !p = new" },
+    "90": { "file": "cssynch.hny", "line": "10", "code": "        cs: assert countLabel(cs) == 1" },
+    "48": { "file": "caslock.hny", "line": "14", "code": "def release(lk):" },
+    "27": { "file": "caslock.hny", "line": "8", "code": "  result = False" },
+    "84": { "file": "cssynch.hny", "line": "10", "code": "        cs: assert countLabel(cs) == 1" },
+    "95": { "file": "cssynch.hny", "line": "11", "code": "        synch.release(?lock)" },
+    "37": { "file": "caslock.hny", "line": "11", "code": "  while not cas(lk, False, True):" },
+    "26": { "file": "caslock.hny", "line": "8", "code": "  result = False" },
+    "105": { "file": "cssynch.hny", "line": "14", "code": "    spawn thread()" },
+    "94": { "file": "cssynch.hny", "line": "11", "code": "        synch.release(?lock)" },
+    "104": { "file": "cssynch.hny", "line": "14", "code": "    spawn thread()" },
+    "59": { "file": "caslock.hny", "line": "15", "code": "  cas(lk, True, False)" },
+    "97": { "file": "cssynch.hny", "line": "13", "code": "for i in {1..NTHREADS}:" },
+    "86": { "file": "cssynch.hny", "line": "10", "code": "        cs: assert countLabel(cs) == 1" },
+    "36": { "file": "caslock.hny", "line": "11", "code": "  while not cas(lk, False, True):" },
+    "87": { "file": "cssynch.hny", "line": "10", "code": "        cs: assert countLabel(cs) == 1" },
+    "31": { "file": "caslock.hny", "line": "10", "code": "def aquire(lk):" },
+    "21": { "file": "caslock.hny", "line": "5", "code": "      !p = new" },
+    "16": { "file": "caslock.hny", "line": "5", "code": "      !p = new" },
+    "64": { "file": "caslock.hny", "line": "15", "code": "  cas(lk, True, False)" },
+    "44": { "file": "caslock.hny", "line": "11", "code": "  while not cas(lk, False, True):" },
+    "74": { "file": "cssynch.hny", "line": "9", "code": "        synch.acquire(?lock)" },
+    "33": { "file": "caslock.hny", "line": "11", "code": "  while not cas(lk, False, True):" },
+    "66": { "file": "cssynch.hny", "line": "5", "code": "lock = synch.Lock()" },
+    "76": { "file": "cssynch.hny", "line": "9", "code": "        synch.acquire(?lock)" },
+    "14": { "file": "caslock.hny", "line": "4", "code": "    if result:" },
+    "23": { "file": "caslock.hny", "line": "5", "code": "      !p = new" },
+    "58": { "file": "caslock.hny", "line": "15", "code": "  cas(lk, True, False)" },
+    "46": { "file": "caslock.hny", "line": "12", "code": "    pass" },
+    "93": { "file": "cssynch.hny", "line": "11", "code": "        synch.release(?lock)" },
+    "28": { "file": "caslock.hny", "line": "8", "code": "  result = False" },
+    "83": { "file": "cssynch.hny", "line": "10", "code": "        cs: assert countLabel(cs) == 1" },
+    "88": { "file": "cssynch.hny", "line": "10", "code": "        cs: assert countLabel(cs) == 1" },
+    "38": { "file": "caslock.hny", "line": "11", "code": "  while not cas(lk, False, True):" },
+    "54": { "file": "caslock.hny", "line": "15", "code": "  cas(lk, True, False)" },
+    "98": { "file": "cssynch.hny", "line": "13", "code": "for i in {1..NTHREADS}:" }
+  }
+}

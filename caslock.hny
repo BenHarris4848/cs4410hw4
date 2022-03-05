@@ -3,3 +3,13 @@ def cas(p, old, new):
     result = !p == old
     if result:
       !p = new
+
+def Lock():
+  result = False
+
+def aquire(lk):
+  while not cas(lk, False, True):
+    pass
+
+def release(lk):
+  cas(lk, True, False)
