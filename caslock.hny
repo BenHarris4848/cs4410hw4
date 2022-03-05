@@ -1,0 +1,5 @@
+def cas(p, old, new):
+  atomically:
+    result = !p == old
+    if result:
+      !p = new
