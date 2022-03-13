@@ -1,0 +1,22 @@
+from synch import Lock, acquire, release
+from alloc import malloc, free
+
+def Stack():
+    result = { .top: None, .lock: Lock() }
+
+def put(q, v):
+    acquire(?q->lock)
+    let node = malloc({ .value: v, .next: q->top }):
+        q->top = node
+    release(?q->lock)
+
+def pop(q):
+    acquire(?q->lock)
+    let node = q->top:
+        if node == None:
+            result = None
+        else:
+            result = node->value
+            q->top = node->next
+            free(node)
+    release(?q->lock)

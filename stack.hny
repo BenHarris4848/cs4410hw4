@@ -3,6 +3,14 @@ import list
 def Stack():
     result = []
 
-def push(s, v):
+def push(q, v):
+    atomically !q = list.append(!q, v)
 
-def pop(s):
+def pop(q):
+    atomically:
+        if !q == []:
+            result = None
+        else:
+            let revlist = list.reversed(!q)
+            result = list.head(revlist)
+            !q = list.reversed(revlist)
