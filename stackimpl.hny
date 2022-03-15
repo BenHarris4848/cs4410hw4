@@ -23,12 +23,11 @@ def pop(s):
 
 def swap(s):
     acquire(?s->lock)
-    var node1 = pop(s)
+    var node1 = s->top
     if not (node1 == None):
-        var node2 = pop(s)
+        var node2 = node1->next
         if not (node2 == None):
-            push(s,node1->value)
-            push(s,node2->value)
-        else:
-            push(s,node1->value)
+            node1->next=node2->next
+            node2->next=node1
+            s->top=node2
     release(?s->lock)
