@@ -3,24 +3,21 @@ import list
 def Stack():
     result = []
 
-def push(q, v):
-    atomically !q = list.append(!q, v)
+def push(s, v):
+    atomically !s = [v,] + !s
 
-def pop(q):
+def pop(s):
     atomically:
-        if !q == []:
+        if !s == []:
             result = None
         else:
-            let revlist = list.reversed(!q)
-            result = list.head(revlist)
-            !q = list.reversed(list.tail(revlist))
+            result = list.head(!s)
+            !s = list.tail(!s)
 
-def swap(q):
+def swap(s):
     atomically:
-        if len s >=2:
-            let revlist = list.reversed(!q)
-            let v1 = pop(q)
-            let v2 = pop(q)
-            result = list.reversed(push(push(q,v1),v2))
-        else:
-            result = q
+        if (len(!s)>=2):
+            var v1 = pop(s)
+            var v2 = pop(s)
+            push(s, v1)
+            push(s, v2)

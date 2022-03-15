@@ -1,8 +1,8 @@
 import stack
 
-const NPUSH
-const NPOP
-const NSWAP
+const NPUSH=3
+const NPOP=3
+const NSWAP=3
 
 s = stack.Stack()
 
@@ -14,11 +14,11 @@ def push_test(self):
 def pop_test(self):
     print("call pop", self)
     let v = stack.pop(?s):
-        print("done get", self, v)
+        print("done pop", self, v)
 
 def swap_test(self):
     print("call swap", self)
-    stack.swap(self)
+    stack.swap(?s)
     print("done swap", self)
 
 npushes = choose {1..NPUSH}

@@ -4,25 +4,31 @@ from alloc import malloc, free
 def Stack():
     result = { .top: None, .lock: Lock() }
 
-def put(q, v):
-    acquire(?q->lock)
-    let node = malloc({ .value: v, .next: q->top }):
-        q->top = node
-    release(?q->lock)
+def push(s, v):
+    acquire(?s->lock)
+    let node = malloc({ .value: v, .next: s->top }):
+        s->top = node
+    release(?s->lock)
 
-def pop(q):
-    acquire(?q->lock)
-    let node = q->top:
+def pop(s):
+    acquire(?s->lock)
+    let node = s->top:
         if node == None:
             result = None
         else:
             result = node->value
-            q->top = node->next
+            s->top = node->next
             free(node)
-    release(?q->lock)
+    release(?s->lock)
 
-def swap(q):
-    acquire(?q->lock)
-    let node1 = pop(q)
-    let node2 = pop(q)
-    result = push(push(q,node1), node2)
+def swap(s):
+    acquire(?s->lock)
+    var node1 = pop(s)
+    if not (node1 == None):
+        var node2 = pop(s)
+        if not (node2 == None):
+            push(s,node1->value)
+            push(s,node2->value)
+        else:
+            push(s,node1->value)
+    release(?s->lock)
