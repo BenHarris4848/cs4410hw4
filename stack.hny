@@ -21,6 +21,6 @@ def swap(q):
             let revlist = list.reversed(!q)
             let v1 = pop(q)
             let v2 = pop(q)
-            result list.reversed(push(push(q,v1),v2))
+            result = list.reversed(push(push(q,v1),v2))
         else:
             result = q
