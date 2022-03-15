@@ -20,3 +20,9 @@ def pop(q):
             q->top = node->next
             free(node)
     release(?q->lock)
+
+def swap(q):
+    acquire(?q->lock)
+    let node1 = pop(q)
+    let node2 = pop(q)
+    result = push(push(q,node1), node2)

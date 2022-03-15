@@ -14,3 +14,13 @@ def pop(q):
             let revlist = list.reversed(!q)
             result = list.head(revlist)
             !q = list.reversed(list.tail(revlist))
+
+def swap(q):
+    atomically:
+        if len s >=2:
+            let revlist = list.reversed(!q)
+            let v1 = pop(q)
+            let v2 = pop(q)
+            result list.reversed(push(push(q,v1),v2))
+        else:
+            result = q
