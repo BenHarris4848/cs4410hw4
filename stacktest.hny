@@ -1,0 +1,32 @@
+import stack
+
+const NPUSH
+const NPOP
+const NSWAP
+
+s = stack.Stack()
+
+def push_test(self):
+    print("call push", self)
+    stack.push(?s, self)
+    print("done push", self)
+
+def pop_test(self):
+    print("call pop", self)
+    let v = stack.pop(?s):
+        print("done get", self, v)
+
+def swap_test(self):
+    print("call swap", self)
+    stack.swap(self)
+    print("done swap", self)
+
+npushes = choose {1..NPUSH}
+npops = choose {1..NPOP}
+nswaps = choose {1..NSWAP}
+for i in {1..npushes}:
+    spawn push_test(i)
+for i in {1..npops}:
+    spawn pop_test(i)
+for i in {1..nswaps}:
+    spawn swap_test(i)
