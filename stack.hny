@@ -13,4 +13,4 @@ def pop(q):
         else:
             let revlist = list.reversed(!q)
             result = list.head(revlist)
-            !q = list.reversed(list.tail(revlist))
+            !q = list.reversed(revlist)
